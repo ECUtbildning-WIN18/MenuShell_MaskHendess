@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using MenuShell.Domain;
 
 namespace MenuShell.View
 {
-    class SerchCoustomerView : ConsoleView
+    class ListAppointmentsView : ConsoleView
     {
         public override string Display()
         {
-            Console.WriteLine("Serch kustomer. . . There are none");
-            return base.Display();
+          // Do something
+            return "Defalut";
         }
     }
 }

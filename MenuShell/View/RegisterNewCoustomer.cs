@@ -1,9 +1,6 @@
 ﻿using MenuShell.Domain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace MenuShell.View
 {
@@ -45,6 +42,10 @@ namespace MenuShell.View
             {
                 LoadCustomers NewCustomer = new LoadCustomers();
                 NewCustomer.Addelement(FirstName, LastName, SSN, PetName, Species);
+                
+                XDocument doc = XDocument.Load("Customers.xml");
+                doc.Root.Add(NewCustomer);
+                doc.Save("Customers.xml");
                 NewCoustomerSucesfullyAdded = true;
             }
             else

@@ -18,41 +18,26 @@ namespace MenuShell
             var Login = new LoginView();
             var ReceptionistMainMenu = new ReceptionistMainView();
             var RegisterNewCoustomer = new RegisterNewCoustomer();
-            var SerchCoustomerView = new SerchCoustomerView(); 
+            var SerchCoustomerView = new ListCoustomerView(); 
 
+            var SysAdminMainMenu = new SySAdminMainView();
+
+            var VetMainMenu = new VeterinaryMainView();
+            while (true)
+            {
+                ReceptionistMainMenu.Display();
             var result = Login.Display();
-            if(result == "receptionist")
-            {
-            ReceptionistMainMenu.Display();
-            }else if(result == "veterinary")
-            {
-                // vet menu go
-            }else if (result == "sysadmin")
-            {
-                // admin menu go
+                if(result == "receptionist")
+                {
+                ReceptionistMainMenu.Display();
+                }else if(result == "veterinary")
+                {
+                VetMainMenu.Display();
+                }else if (result == "sysadmin")
+                {
+                SysAdminMainMenu.Display();
+                }
             }
-            //var result = ReceptionistMainMenu.Display();
-            //if(result == "1")
-            //{
-            //    RegisterNewCoustomer.Display();
-            //}else if(result == "2")
-            //{
-            //    SerchCoustomerView.Display();
-            //}else if(result == "3")
-            //{
-            //    GitNuke();   
-            //}
-            ReceptionistMainMenu.Display();
-        }
-        
-        public static void GitNuke()
-        {
-            for (int i = 0; i < 1000; i++)
-            {
-                Console.Write(i);
-                Thread.Sleep(1);
-            }
-            Environment.Exit(0);
         }
     }
 }

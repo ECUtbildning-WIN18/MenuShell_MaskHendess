@@ -50,11 +50,17 @@
     <Compile Include="Domain\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ChangeAppointmentView.cs" />
+    <Compile Include="View\JournalView.cs" />
+    <Compile Include="View\ListAppointmentsView.cs" />
     <Compile Include="View\LoginView.cs" />
+    <Compile Include="View\RemoveCustomer.cs" />
+    <Compile Include="View\SysAdminMainView.cs" />
     <Compile Include="View\ReceptionistMainView.cs" />
     <Compile Include="View\ConsoleView.cs" />
     <Compile Include="View\RegisterNewCoustomer.cs" />
-    <Compile Include="View\SerchCoustomerView.cs" />
+    <Compile Include="View\ListCoustomerView.cs" />
+    <Compile Include="View\VeterinaryMainView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

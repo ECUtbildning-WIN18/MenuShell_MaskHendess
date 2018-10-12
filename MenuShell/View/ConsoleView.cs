@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MenuShell.Domain;
 
 namespace MenuShell.View
 {
@@ -10,8 +11,12 @@ namespace MenuShell.View
     {
         public virtual string Display()
         {
-            // Add all the Loading stuff here
-          Console.Clear();
+            Console.Clear();
+            GetUsers Users = new GetUsers();
+            Users.LoadUsers();
+
+            LoadCustomers Customers = new LoadCustomers();
+            Customers.LoadCustomersList();
             return "Return Me";
         }
     }

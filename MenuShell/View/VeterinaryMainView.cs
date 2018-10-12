@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MenuShell.View
 {
-    class ReceptionistMainView : ConsoleView
+    class VeterinaryMainView : ConsoleView
     {
         public override string Display()
         {
@@ -14,28 +14,24 @@ namespace MenuShell.View
             while (LoopisFinished == false)
             {
                 base.Display(); // Consloe.Clear() 
-                Console.WriteLine("== Reception Menu ==");
-                Console.WriteLine("\n1. Register new Customer" +
-                                  "\n2. List existing Customers" +
-                                  "\n3. Change Appointment" +
-                                  "\n4. Log Out");
+                Console.WriteLine("== Vet Menu ==");
+                Console.WriteLine("\n1. List Appointments / Details\n2. Patient Journals \n3. Log Out");
                 Console.Write("\nSelect Action:");
                 var input = Console.ReadKey();
 
                 switch (input.Key)
                 {
-                        case ConsoleKey.D1: // Register new Patient
+                    case ConsoleKey.D1: // Register new Patient
                         RegisterNewCoustomer NewCustomer = new RegisterNewCoustomer();
                         NewCustomer.Display();
                         break;
-                        case ConsoleKey.D2:
-                        ListCoustomerView NewList = new ListCoustomerView();
-                            NewList.Display();
+                    case ConsoleKey.D2:
+
                         break;
-                        case ConsoleKey.D3:
+                    case ConsoleKey.D3:
                         LoopisFinished = true;
                         break; ;
-                        default:
+                    default:
                         Console.WriteLine("Selection Error");
                         return "Default";
                 }
