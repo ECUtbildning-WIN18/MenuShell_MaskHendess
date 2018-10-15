@@ -12,11 +12,7 @@ namespace MenuShell.View
         public virtual string Display()
         {
             Console.Clear();
-            //GetUsers Users = new GetUsers();
-            //Users.LoadUsers();
-
-            //LoadCustomers Customers = new LoadCustomers();
-            //Customers.LoadCustomersList();
+           
             return "Return Me";
         }
     }
