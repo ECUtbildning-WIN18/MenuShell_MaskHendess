@@ -25,7 +25,8 @@ namespace MenuShell
             var VetMainMenu = new VeterinaryMainView();
             while (true)
             {
-                ReceptionistMainMenu.Display();
+                SysAdminMainMenu.Display();
+
             var result = Login.Display();
                 if(result == "receptionist")
                 {

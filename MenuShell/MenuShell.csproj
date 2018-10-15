@@ -54,6 +54,7 @@
     <Compile Include="View\JournalView.cs" />
     <Compile Include="View\ListAppointmentsView.cs" />
     <Compile Include="View\LoginView.cs" />
+    <Compile Include="View\RegisterNewUserView.cs" />
     <Compile Include="View\RemoveCustomer.cs" />
     <Compile Include="View\SysAdminMainView.cs" />
     <Compile Include="View\ReceptionistMainView.cs" />

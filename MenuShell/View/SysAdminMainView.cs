@@ -25,9 +25,9 @@ namespace MenuShell.View
                 switch (input.Key)
                 {
                     case ConsoleKey.D1: // Register new Patient
-                    RegisterNewCoustomer NewCustomer = new RegisterNewCoustomer();
-                    NewCustomer.Display();
-                        break;
+                    RegisterNewUser NewUserMenu = new RegisterNewUser();
+                        NewUserMenu.Display();
+                    break;
                     case ConsoleKey.D2:
 
                         break;

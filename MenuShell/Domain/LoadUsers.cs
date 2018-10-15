@@ -22,7 +22,7 @@ namespace MenuShell.Domain
             {
                 var username = element.Attribute("username").Value;
                 var PassWord = element.Attribute("password").Value;
-                var role = element.Attribute("role").Value;
+                var role = element.Attribute("role").Value;              
                 users.Add(new User(username, PassWord, role));
             }
 
