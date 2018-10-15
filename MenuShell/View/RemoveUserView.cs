@@ -1,8 +1,5 @@
 ﻿using MenuShell.Domain;
 using System;
-using System.Linq;
-using System.Xml;
-using System.Xml.Linq;
 
 namespace MenuShell.View
 {
@@ -32,20 +29,8 @@ namespace MenuShell.View
             var consoleKeyInfo = Console.ReadKey();
             if(consoleKeyInfo.Key == ConsoleKey.Y)
             {
-                XDocument doc = XDocument.Load("Users.xml");
-                var root = doc.Root;
-
-                foreach (XElement element in root.Elements())
-                {
-                    var elmentusername = Convert.ToString(element.Attribute("username"));
-                    if (input == elmentusername)
-                    {
-                        element.RemoveAll();
-                        element.Remove();
-                        Console.WriteLine("Element Removed");
-                        doc.Save("Users.xml");
-                    }
-                }
+                DeleateUser SelectedUser = new DeleateUser();
+                SelectedUser.GoodByeForever(input);
                 SuccessfulyRemovedUser = true;
             }
             else

@@ -25,10 +25,13 @@ namespace MenuShell.View
             string Password = "";
             string Role = "";
             bool NewUserHasValidRole = false;
+
             Console.WriteLine("Enter new UserName:\n");
             Username = Console.ReadLine();
+
             Console.WriteLine("Enter new Password:\n");
             Password = Console.ReadLine();
+
             while (NewUserHasValidRole == false) // Must Select a Valid role for the User
             {
                 Role = SelectUserRole(Role);
@@ -36,10 +39,6 @@ namespace MenuShell.View
                 if (Role == "receptionist"|| Role == "veterinary" || Role == "sysadmin")
                 {
                     NewUserHasValidRole = true;
-                }
-                else
-                {
-                    NewUserHasValidRole = false;
                 }
             }
 
