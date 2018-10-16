@@ -57,6 +57,7 @@
     <Compile Include="View\LoginView.cs" />
     <Compile Include="View\RegisterNewUserView.cs" />
     <Compile Include="View\RemoveUserView.cs" />
+    <Compile Include="View\SerchcustomerView.cs" />
     <Compile Include="View\SysAdminMainView.cs" />
     <Compile Include="View\ReceptionistMainView.cs" />
     <Compile Include="View\ConsoleView.cs" />

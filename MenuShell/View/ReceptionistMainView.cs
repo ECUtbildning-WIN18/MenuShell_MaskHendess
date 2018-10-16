@@ -19,7 +19,7 @@ namespace MenuShell.View
                 Console.WriteLine("== Reception Menu ==");
                 Console.WriteLine("\n1. Register new Customer" +
                                   "\n2. List existing Customers" +
-                                  "\n3. Change Appointment" +
+                                  "\n3. Serch Customer" +
                                   "\n4. Log Out");
                 Console.Write("\nSelect Action:");
                 var input = Console.ReadKey();
@@ -35,6 +35,10 @@ namespace MenuShell.View
                             NewList.Display();
                         break;
                         case ConsoleKey.D3:
+                        SerchcustomerView SerchCustomerMenu = new SerchcustomerView();
+                        SerchCustomerMenu.Display();
+                        break;
+                        case ConsoleKey.D4:
                         LoopisFinished = true;
                         break; ;
                         default:

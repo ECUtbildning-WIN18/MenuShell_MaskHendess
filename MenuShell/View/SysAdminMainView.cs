@@ -29,25 +29,29 @@ namespace MenuShell.View
                 {
                     case ConsoleKey.D1: // New User
                     RegisterNewUser NewUserMenu = new RegisterNewUser();
-                        NewUserMenu.Display();
+                    NewUserMenu.Display();
                     break;
+
                     case ConsoleKey.D2: // Delete
                     RemoveUserView RemoveUserMenu = new RemoveUserView();
                     RemoveUserMenu.Display();
-                        break;
+                    break;
+
                     case ConsoleKey.D3: // List Users
-                        base.Display();
-                        GetUsers users = new GetUsers();
-                        users.ListUsers();
-                        Console.WriteLine("Press any key to Continue");
-                        Console.ReadKey();
-                        break;
+                    base.Display();
+                    GetUsers users = new GetUsers();
+                    users.ListUsers();
+                    Console.WriteLine("Press any key to Continue");
+                    Console.ReadKey();
+                    break;
+
                     case ConsoleKey.D4:
-                        LoopisFinished = true;
-                        break;
+                    LoopisFinished = true;
+                    break;
+
                     default:
-                        Console.WriteLine("Selection Error");
-                        break;
+                    Console.WriteLine("Selection Error");
+                    break;
                 }
             }
             return "Default";

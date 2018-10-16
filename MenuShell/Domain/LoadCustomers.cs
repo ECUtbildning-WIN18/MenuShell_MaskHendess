@@ -24,7 +24,9 @@ namespace MenuShell.Domain
                 var socialsecuritynumber = element.Attribute("SSN").Value;
                 var petname = element.Attribute("petname").Value;
                 var petspecies = element.Attribute("petspecies").Value;
-                customers.Add(new Customer(firstname, lastname, socialsecuritynumber, petname, petspecies));
+                var appointement = element.Attribute("appointment").Value;
+                DateTime appointmentDate = Convert.ToDateTime(appointement);
+                customers.Add(new Customer(firstname, lastname, socialsecuritynumber, petname, petspecies, appointmentDate));
             }
 
             return customers;
@@ -33,9 +35,30 @@ namespace MenuShell.Domain
         public void Addelement(string FirstName, string LastName, string SSN, string PetName, string Species)
         {
             var DOC = XDocument.Load("Customers.xml"); // This is the xml file we load from
-            var NewDude = new Customer(FirstName, LastName, SSN, PetName, Species);
-            DOC.Root.Add(NewDude);
+            XElement NewCustomer = new XElement("Customer",
+                new XAttribute("firstname", FirstName),
+                new XAttribute("lastname", LastName),
+                new XAttribute("SSN", SSN),
+                new XAttribute("petname", PetName),
+                new XAttribute("petspecies", Species),
+                new XAttribute("appointment", DateTime.Now));
+            DOC.Root.Add(NewCustomer);
+            DOC.Save("Customers.xml");
 
+        }
+
+        public void ListCustomers()
+        {
+            var customerlist = new LoadCustomers();
+            var customers = customerlist.LoadCustomersList();
+            Console.WriteLine("Customers:\n");
+            
+            foreach (var element in customers)
+            {
+
+                Console.WriteLine(element.FirstName + " " + element.LastName + ", SSN: " + element.SSN +
+                                    " Patient: " + element.PetName + " Species: " + element.Petspecies);
+            }
         }
     }
 }
