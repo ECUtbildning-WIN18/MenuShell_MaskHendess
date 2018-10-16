@@ -8,6 +8,8 @@ namespace MenuShell.View
     {
         public override string Display()
         {
+            Console.Title = "Login Menu";
+
             bool LoopisFinished = false;
             while (LoopisFinished == false) { 
                 base.Display();

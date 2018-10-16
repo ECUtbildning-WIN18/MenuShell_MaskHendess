@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml.Linq;
 
 namespace MenuShell.Domain
@@ -22,11 +23,22 @@ namespace MenuShell.Domain
             {
                 var username = element.Attribute("username").Value;
                 var PassWord = element.Attribute("password").Value;
-                var role = element.Attribute("role").Value;
+                var role = element.Attribute("role").Value;              
                 users.Add(new User(username, PassWord, role));
             }
 
             return users;
+        }
+
+        public void ListUsers()
+        {
+            var userslist = new GetUsers();
+            var users = userslist.LoadUsers();
+            Console.WriteLine("Users:\n");
+            foreach (var element in users)
+            {
+                Console.WriteLine(element.Username);
+            }
         }
     }
 }

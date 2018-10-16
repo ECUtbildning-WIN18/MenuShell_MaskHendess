@@ -47,6 +47,7 @@
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\LoadCustomers.cs" />
     <Compile Include="Domain\LoadUsers.cs" />
+    <Compile Include="Domain\DeleateUser.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,7 +55,8 @@
     <Compile Include="View\JournalView.cs" />
     <Compile Include="View\ListAppointmentsView.cs" />
     <Compile Include="View\LoginView.cs" />
-    <Compile Include="View\RemoveCustomer.cs" />
+    <Compile Include="View\RegisterNewUserView.cs" />
+    <Compile Include="View\RemoveUserView.cs" />
     <Compile Include="View\SysAdminMainView.cs" />
     <Compile Include="View\ReceptionistMainView.cs" />
     <Compile Include="View\ConsoleView.cs" />

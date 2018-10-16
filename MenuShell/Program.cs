@@ -12,9 +12,8 @@ namespace MenuShell
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Title = "Login Menu";
-
-
+            
+        
             var Login = new LoginView();
             var ReceptionistMainMenu = new ReceptionistMainView();
             var RegisterNewCoustomer = new RegisterNewCoustomer();
@@ -25,7 +24,8 @@ namespace MenuShell
             var VetMainMenu = new VeterinaryMainView();
             while (true)
             {
-                ReceptionistMainMenu.Display();
+                SysAdminMainMenu.Display();
+
             var result = Login.Display();
                 if(result == "receptionist")
                 {

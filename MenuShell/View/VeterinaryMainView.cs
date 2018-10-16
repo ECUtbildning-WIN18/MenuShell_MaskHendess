@@ -10,6 +10,8 @@ namespace MenuShell.View
     {
         public override string Display()
         {
+            Console.Title = "Veterinary Menu";
+
             bool LoopisFinished = false;
             while (LoopisFinished == false)
             {
@@ -30,10 +32,10 @@ namespace MenuShell.View
                         break;
                     case ConsoleKey.D3:
                         LoopisFinished = true;
-                        break; ;
+                        break; 
                     default:
                         Console.WriteLine("Selection Error");
-                        return "Default";
+                        break;
                 }
             }
             return "Default";

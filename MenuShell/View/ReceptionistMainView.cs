@@ -10,6 +10,8 @@ namespace MenuShell.View
     {
         public override string Display()
         {
+            Console.Title = "Receptionist Menu";
+
             bool LoopisFinished = false;
             while (LoopisFinished == false)
             {
@@ -37,7 +39,7 @@ namespace MenuShell.View
                         break; ;
                         default:
                         Console.WriteLine("Selection Error");
-                        return "Default";
+                            break;
                 }
             }
             return "Default";
