@@ -29,16 +29,6 @@ namespace MenuShell.Domain
 
             return users;
         }
-
-        public void ListUsers()
-        {
-            var userslist = new GetUsers();
-            var users = userslist.LoadUsers();
-            Console.WriteLine("Users:\n");
-            foreach (var element in users)
-            {
-                Console.WriteLine(element.Username);
-            }
-        }
+        
     }
 }

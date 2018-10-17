@@ -15,6 +15,7 @@ namespace MenuShell.View
           base.Display();
             LoadCustomers customers = new LoadCustomers();
             customers.ListCustomers();
+            
             Console.WriteLine("Press any key to Continue");
             Console.ReadKey();
             return "Defalut";

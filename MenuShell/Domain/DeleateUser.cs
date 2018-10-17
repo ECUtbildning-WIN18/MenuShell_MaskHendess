@@ -7,6 +7,7 @@ namespace MenuShell.Domain
     {
         public void GoodByeForever(string input)
         {
+            Console.Clear();
             XDocument doc = XDocument.Load("Users.xml");
             var root = doc.Root;
 
@@ -17,7 +18,9 @@ namespace MenuShell.Domain
                 {
                     element.RemoveAll();
                     element.Remove();
-                    Console.WriteLine("Element Removed");
+                    Console.WriteLine("User Sucessfully Deleted");
+                    Console.WriteLine("Press Any Key To Continue");
+                    Console.ReadKey();
                     doc.Save("Users.xml");
                 }
             }

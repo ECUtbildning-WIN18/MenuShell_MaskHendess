@@ -19,9 +19,8 @@ namespace MenuShell.View
                 base.Display(); // Consloe.Clear() 
                 Console.WriteLine("== System Admin Menu ==");
                 Console.WriteLine("\n1. Add User" +
-                                  "\n2. Delete User" +
-                                  "\n3. List Users" +
-                                  " \n4. Log Out");
+                                  "\n2. List Users" + 
+                                  " \n3. Log Out");
                 Console.Write("\nSelect Action:");
                 var input = Console.ReadKey();
 
@@ -33,19 +32,11 @@ namespace MenuShell.View
                     break;
 
                     case ConsoleKey.D2: // Delete
-                    RemoveUserView RemoveUserMenu = new RemoveUserView();
-                    RemoveUserMenu.Display();
-                    break;
+                        var RemoveUserMenu = new RemoveUserView();
+                        RemoveUserMenu.Display();
+                        break;
 
-                    case ConsoleKey.D3: // List Users
-                    base.Display();
-                    GetUsers users = new GetUsers();
-                    users.ListUsers();
-                    Console.WriteLine("Press any key to Continue");
-                    Console.ReadKey();
-                    break;
-
-                    case ConsoleKey.D4:
+                    case ConsoleKey.D3:
                     LoopisFinished = true;
                     break;
 
