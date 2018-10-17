@@ -12,8 +12,7 @@ namespace MenuShell
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            
-        
+
             var Login = new LoginView();
             var ReceptionistMainMenu = new ReceptionistMainView();
             var RegisterNewCoustomer = new RegisterNewCoustomer();

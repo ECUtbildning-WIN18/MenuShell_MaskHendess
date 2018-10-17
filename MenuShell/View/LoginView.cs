@@ -19,7 +19,7 @@ namespace MenuShell.View
                 string username = Console.ReadLine();
 
                 Console.Write("PassWord:");
-                string password = Console.ReadLine();
+                string password = WritePassword();
 
                 Console.Write("\nIs this correct (Y)es/(N)o:");
                 var input = Console.ReadKey();
@@ -50,6 +50,35 @@ namespace MenuShell.View
                 Thread.Sleep(2000);
             }
             return "Default";
+        }
+
+        private string WritePassword()
+        {
+            string Password = "";
+            do
+            {
+                ConsoleKeyInfo key = Console.ReadKey(true);
+                // Backspace Should Not Work
+                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
+                {
+                    Password += key.KeyChar;
+                    Console.Write("*");
+                }
+                else
+                {
+                    if (key.Key == ConsoleKey.Backspace && Password.Length > 0)
+                    {
+                        Password = Password.Substring(0, (Password.Length - 1));
+                        Console.Write("\b \b");
+                    }
+                    else if (key.Key == ConsoleKey.Enter)
+                    {
+                        break;
+                    }
+                }
+            } while (true);
+
+            return Password;
         }
     }
 }

@@ -5,7 +5,6 @@ namespace MenuShell.View
 {
     class RemoveUserView : ConsoleView // this class might be obsolite?
     {
-        bool SuccessfulyRemovedUser = false;
         public override string Display()
         {
                 base.Display();
