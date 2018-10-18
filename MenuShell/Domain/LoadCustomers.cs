@@ -24,8 +24,8 @@ namespace MenuShell.Domain
                 var socialsecuritynumber = element.Attribute("SSN").Value;
                 var petname = element.Attribute("petname").Value;
                 var petspecies = element.Attribute("petspecies").Value;
-                var appointement = element.Attribute("appointment").Value;
-                DateTime appointmentDate = Convert.ToDateTime(appointement);
+                var appointment = element.Attribute("appointment").Value;
+                DateTime appointmentDate = Convert.ToDateTime(appointment);
                 customers.Add(new Customer(firstname, lastname, socialsecuritynumber, petname, petspecies, appointmentDate));
             }
 
