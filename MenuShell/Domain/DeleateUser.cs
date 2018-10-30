@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Xml.Linq;
 
 namespace MenuShell.Domain
@@ -8,22 +9,47 @@ namespace MenuShell.Domain
         public void GoodByeForever(string input)
         {
             Console.Clear();
-            XDocument doc = XDocument.Load("Users.xml");
-            var root = doc.Root;
 
-            foreach (XElement element in root.Elements())
+            string connectionString = "Data Source=(local);Initial Catalog=MenuShell;Integrated Security=true";
+            //QUEEERRRY
+            
+                string queryString = $"DELETE FROM Users WHERE Username ='{input}'";
+            
+            using (var connection = new SqlConnection(connectionString))
             {
-                var elmentusername = Convert.ToString(element.Attribute("username"));
-                if (input == elmentusername)
+                var sqlcommand = new SqlCommand(queryString, connection);
+                try
                 {
-                    element.RemoveAll();
-                    element.Remove();
-                    Console.WriteLine("User Sucessfully Deleted");
-                    Console.WriteLine("Press Any Key To Continue");
-                    Console.ReadKey();
-                    doc.Save("Users.xml");
+                    connection.Open();
+                    var reader = sqlcommand.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
                 }
             }
+            //XDocument doc = XDocument.Load("Users.xml");
+            //var root = doc.Root;
+
+            //foreach (XElement element in root.Elements())
+            //{
+            //    var elmentusername = Convert.ToString(element.Attribute("username"));
+            //    if (input == elmentusername)
+            //    {
+            //        element.RemoveAll();
+            //        element.Remove();
+            //        Console.WriteLine("User Sucessfully Deleted");
+            //        Console.WriteLine("Press Any Key To Continue");
+            //        Console.ReadKey();
+            //        doc.Save("Users.xml");
+            //    }
+            //}
         }
     }
 }

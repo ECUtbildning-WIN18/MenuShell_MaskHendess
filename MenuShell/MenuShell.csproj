@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Authentication.cs" />
+    <Compile Include="Domain\AuthenticationService.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\DeleateCustomer.cs" />
     <Compile Include="Domain\ListCustomers.cs" />

@@ -67,7 +67,7 @@ namespace MenuShell.Domain
         {
             Console.WriteLine("Delete User? (Y)es/(N)o");
             var input = Console.ReadKey();
-            userName = "username=\"" + userName + "\""; // userName == userName in the xml document
+            userName = userName; // userName == userName in the xml document
             if (input.Key == ConsoleKey.Y)
             {
                 DeleateUser SelectedUser = new DeleateUser();
