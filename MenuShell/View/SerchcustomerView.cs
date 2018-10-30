@@ -12,7 +12,6 @@ namespace MenuShell.View
         public override string Display()
         {
             base.Display();
-            Console.ReadKey();
             ListCustomers Customers = new ListCustomers();
             Customers.Display();
             string UserName = Customers.ShowDetails();

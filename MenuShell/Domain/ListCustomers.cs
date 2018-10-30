@@ -18,7 +18,7 @@ namespace MenuShell.Domain
                 Console.WriteLine("Customers:\n");
                 foreach (var element in customers)
                 {
-                    Console.WriteLine(element.FirstName + " " + element.PetName);
+                    Console.WriteLine(element.FirstName+ " " + element.PetName);
                 }
             }
 

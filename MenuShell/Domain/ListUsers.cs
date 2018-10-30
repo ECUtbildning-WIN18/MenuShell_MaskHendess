@@ -1,6 +1,7 @@
 ﻿using MenuShell.View;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace MenuShell.Domain
     class ListUsers
     {
         private GetUsers userslist = new GetUsers();
-        private List<User> users = new List<User>();
+       private List<User> users = new List<User>();
         
         public void Display()
         {
@@ -22,7 +23,7 @@ namespace MenuShell.Domain
                 Console.WriteLine(element.Username);
             }
         }
-
+        
         public string ShowDetails()
         {
             string UserName = "";
@@ -48,13 +49,13 @@ namespace MenuShell.Domain
                 if (user.Username == userName)
                 {
                     Console.Clear();
-                    Console.WriteLine("Username: " + user.Username +"\nPassword: " + user.PassWord +"\nRole: " + user.Role);
+                    Console.WriteLine("Username: " + user.Username + "\nPassword: " + user.PassWord + "\nRole: " + user.Role);
                     i = 1;
                     DeleteUserReview(userName);
                 }
             }
 
-            if( i == 0)
+            if (i == 0)
             {
                 Console.WriteLine("User Not Found.");
                 Console.WriteLine("Press Any key to Continue");

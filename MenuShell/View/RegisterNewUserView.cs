@@ -1,5 +1,6 @@
 ﻿using MenuShell.Domain;
 using System;
+using System.Data.SqlClient;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -47,14 +48,37 @@ namespace MenuShell.View
 
             if (input.Key == ConsoleKey.Y)
             {
-                XDocument doc = XDocument.Load("Users.xml");
-                XElement NewUser = new XElement("User",
-                         new XAttribute("username", Username),
-                         new XAttribute("password", Password),
-                         new XAttribute("role", Role));
-              
-                doc.Root.Add(NewUser);
-                doc.Save("Users.xml");
+                string connectionString = "Data Source=(local);Initial Catalog=MenuShell;Integrated Security=true";
+                //QUEEERRRY
+                string queryString = $"INSERT INTO Users (Username, Password, Userrole) Values('{Username}', '{Password}', '{Role}')"; // Select all from users 
+                // do the sql command to insert the new user into the database, FUCK SQL SYNTAXES
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    var sqlcommand = new SqlCommand(queryString, connection);
+                    try
+                    {
+                        connection.Open();
+                        var reader = sqlcommand.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                        }
+
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
+                }
+                //XDocument doc = XDocument.Load("Users.xml");
+                //XElement NewUser = new XElement("User",
+                //         new XAttribute("username", Username),
+                //         new XAttribute("password", Password),
+                //         new XAttribute("role", Role));
+
+                //doc.Root.Add(NewUser);
+                //doc.Save("Users.xml");
                 NewUserAdded = true;
             }
             else
