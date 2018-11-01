@@ -66,6 +66,7 @@
     <Compile Include="View\ConsoleView.cs" />
     <Compile Include="View\RegisterNewCoustomer.cs" />
     <Compile Include="View\ListCoustomerView.cs" />
+    <Compile Include="Domain\ShowMenu.cs" />
     <Compile Include="View\VeterinaryMainView.cs" />
   </ItemGroup>
   <ItemGroup>

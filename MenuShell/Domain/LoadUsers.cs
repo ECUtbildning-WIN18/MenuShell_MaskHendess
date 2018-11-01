@@ -41,6 +41,7 @@ namespace MenuShell.Domain
                     throw;
                 }
             }
+            // XML Variant (1.1)
             //var DOC = XDocument.Load("Users.xml");
 
             //var ROOT = DOC.Root;

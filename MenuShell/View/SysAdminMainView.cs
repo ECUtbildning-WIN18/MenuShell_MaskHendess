@@ -14,7 +14,7 @@ namespace MenuShell.View
             Console.Title = "System Admin Menu";
 
             bool LoopisFinished = false;
-            while (LoopisFinished == false)
+            while (LoopisFinished == false) // Stop loop to go back to Main
             {
                 base.Display(); // Consloe.Clear() 
                 Console.WriteLine("== System Admin Menu ==");
@@ -26,17 +26,17 @@ namespace MenuShell.View
 
                 switch (input.Key)
                 {
-                    case ConsoleKey.D1: // New User
+                    case ConsoleKey.D1: // Add New User
                     RegisterNewUser NewUserMenu = new RegisterNewUser();
                     NewUserMenu.Display();
                     break;
 
-                    case ConsoleKey.D2: // Delete
+                    case ConsoleKey.D2: // List Users => Show Details => Delete User
                         var RemoveUserMenu = new RemoveUserView();
                         RemoveUserMenu.Display();
                         break;
 
-                    case ConsoleKey.D3:
+                    case ConsoleKey.D3: // Log Out
                     LoopisFinished = true;
                     break;
 
