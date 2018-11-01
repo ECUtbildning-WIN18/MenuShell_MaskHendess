@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Authentication.cs" />
+    <Compile Include="Domain\AuthenticationService.cs" />
     <Compile Include="Domain\Customer.cs" />
+    <Compile Include="Domain\DeleateCustomer.cs" />
+    <Compile Include="Domain\ListCustomers.cs" />
+    <Compile Include="Domain\ListUsers.cs" />
     <Compile Include="Domain\LoadCustomers.cs" />
     <Compile Include="Domain\LoadUsers.cs" />
     <Compile Include="Domain\DeleateUser.cs" />
@@ -57,6 +60,7 @@
     <Compile Include="View\LoginView.cs" />
     <Compile Include="View\RegisterNewUserView.cs" />
     <Compile Include="View\RemoveUserView.cs" />
+    <Compile Include="View\SerchcustomerView.cs" />
     <Compile Include="View\SysAdminMainView.cs" />
     <Compile Include="View\ReceptionistMainView.cs" />
     <Compile Include="View\ConsoleView.cs" />

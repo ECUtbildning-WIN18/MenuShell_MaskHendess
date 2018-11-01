@@ -9,13 +9,13 @@ namespace MenuShell.View
         bool NewCoustomerSucesfullyAdded = false;
         public override string Display()
         {
-            
-            do
+
+            while (NewCoustomerSucesfullyAdded == false)
             {
                 base.Display();
                 AddCoustomer();
-            } while (NewCoustomerSucesfullyAdded == false);
-            return "Fail";
+            }
+            return "Default";
         }
 
         private void AddCoustomer()
@@ -45,8 +45,16 @@ namespace MenuShell.View
                 
                 XDocument doc = XDocument.Load("Customers.xml");
                 doc.Root.Add(NewCustomer);
-                doc.Save("Customers.xml");
                 NewCoustomerSucesfullyAdded = true;
+
+                //XDocument doc = XDocument.Load("Users.xml");
+                //XElement NewUser = new XElement("User",
+                //         new XAttribute("username", Username),
+                //         new XAttribute("password", Password),
+                //         new XAttribute("role", Role));
+
+                //doc.Root.Add(NewUser);
+                //doc.Save("Users.xml");
             }
             else
             {

@@ -13,14 +13,11 @@ namespace MenuShell.View
         public override string Display()
         {
           base.Display();
-            Console.WriteLine("Listing Customers");
-            //XDocument doc = XDocument.Load("Customers.xml");
-
-            //foreach (var customer in doc)
-            //{
-            //    Console.WriteLine(customer.FirstName);
-            //}
-            //Console.ReadLine();
+            LoadCustomers customers = new LoadCustomers();
+            customers.ListCustomers();
+            
+            Console.WriteLine("Press any key to Continue");
+            Console.ReadKey();
             return "Defalut";
         }
     }

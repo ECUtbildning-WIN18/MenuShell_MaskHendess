@@ -13,14 +13,16 @@ namespace MenuShell.Domain
         public string SSN { get; }
         public string PetName { get; set; }
         public string Petspecies { get; set; }
+        DateTime Appointment { get; set; }
 
-        public Customer(string firstName, string lastName, string sSN, string petName, string petspecies)
+        public Customer(string firstName, string lastName, string sSN, string petName, string petspecies, DateTime appointment)
         {
             FirstName = firstName;
             LastName = lastName;
             SSN = sSN;
             PetName = petName;
             Petspecies = petspecies;
+            Appointment = appointment;
         }
 
         public override string ToString()

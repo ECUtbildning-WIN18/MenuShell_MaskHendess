@@ -2,42 +2,41 @@
 using MenuShell.View;
 using System;
 using System.Collections.Generic;
-using System.Threading;
-using System.Xml;
+using System.Data.SqlClient;
 
 namespace MenuShell
 {
-    class Program 
+    class Program
     {
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            
-        
+           
             var Login = new LoginView();
             var ReceptionistMainMenu = new ReceptionistMainView();
             var RegisterNewCoustomer = new RegisterNewCoustomer();
-            var SerchCoustomerView = new ListCoustomerView(); 
+            var SerchCoustomerView = new ListCoustomerView();
 
             var SysAdminMainMenu = new SySAdminMainView();
 
             var VetMainMenu = new VeterinaryMainView();
             while (true)
             {
-                SysAdminMainMenu.Display();
-
-            var result = Login.Display();
-                if(result == "receptionist")
+                var result = Login.Display();
+                if (result == "receptionist")
                 {
-                ReceptionistMainMenu.Display();
-                }else if(result == "veterinary")
+                    ReceptionistMainMenu.Display();
+                }
+                else if (result == "veterinary")
                 {
-                VetMainMenu.Display();
-                }else if (result == "sysadmin")
+                    VetMainMenu.Display();
+                }
+                else if (result == "sysadmin")
                 {
-                SysAdminMainMenu.Display();
+                    SysAdminMainMenu.Display();
                 }
             }
         }
+        
     }
 }
