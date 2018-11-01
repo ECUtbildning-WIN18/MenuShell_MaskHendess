@@ -38,7 +38,7 @@ namespace MenuShell.View
                     }
                     else
                     {
-                        Console.WriteLine("Access Denied!");
+                        Console.WriteLine("\nAccess Denied!");
                     }
                 }
                 else if ( input.Key == ConsoleKey.N) {
@@ -47,12 +47,12 @@ namespace MenuShell.View
                 Console.WriteLine("\nInvalid Username or Password.");
                     
                 }
-                Thread.Sleep(2000);
+                Thread.Sleep(1500);
             }
             return "Default";
         }
 
-        private string WritePassword()
+        private string WritePassword() // A method for "hiding" ConsoleKey Input
         {
             string Password = "";
             do
@@ -61,8 +61,8 @@ namespace MenuShell.View
                 // Backspace Should Not Work
                 if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
                 {
-                    Password += key.KeyChar;
-                    Console.Write("*");
+                    Password += key.KeyChar; // adds the Console Key to the String
+                    Console.Write("*"); // this is what gets written on screen instead of the input
                 }
                 else
                 {
@@ -76,7 +76,7 @@ namespace MenuShell.View
                         break;
                     }
                 }
-            } while (true);
+            } while (true); // Loops untill you press ENTER
 
             return Password;
         }
